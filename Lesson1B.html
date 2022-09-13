@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <!-- the "canvas" tag creates a canvas that we can draw on -->
+        <!-- width and height attributes dictate the size of the canvas in pixels-->
+        <canvas width="600" height="600"></cavas>
+        
+        <!-- the "script" tag is where we put the active code, or the code that will be run by the browser -->
+        <script>
+            //Note: inside the script tag, comments need a different indicator!
+            let canvas = document.querySelector('canvas');
+            // What is happening in line 10? Let me explain:
+            //"let" is a special phrase that creates a variable (or kind of pointer to information)
+            // "=" means assignment of the variable, not that it is equivelent to or balanced with (== is equivilent to)
+            // "document" refers to this set of script, specifically, it is a Javascript object that refers to the HTML document we are working with
+            // "." states that we want a part of the object (in this case, document)
+            // "querySelector" selects an element from the document
+            // "()" tells the computer that there will be parameters that help to define this action
+            // "'canvas'" is the example name of the parameter we want, and since the name is a string, it is in single quotes ''
+            // ";" tells the computer that this Javascript script is finished
+            // Now, with all that out of the way, this is what that looks like in Javascript code:
+            
+            //To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, we need to know)
+            let context = canvas.getContext('2d');
+
+        </script>
+
+    </body>
+</html>
