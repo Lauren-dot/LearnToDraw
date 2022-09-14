@@ -24,6 +24,12 @@
             // To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, we need to know)
             let context = canvas.getContext('2d');
 
+            // Notice how this next line of code is not a variable or a function. It is a property. 
+            // Before we draw even a simple shape on our canvas using our context, we need to define the style of what we will draw
+            // You can experiment by putting this property below the .fillRect attribute. 
+            // Will the rectangle still be pink (or another color of your choice?)? No. The computer needs to know the correct crayon in hand before it draws anything.
+            context.fillStyle = 'pink';
+
             // This creates a filled-in rectangle on the 2d canvas
             context.fillRect(200, 200, 400, 400);
             // The first two numbers in the () are the x (which goes across/horizontally) and y (which goes up and down/vertically) coordinates
