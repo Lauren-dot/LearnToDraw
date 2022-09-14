@@ -2,7 +2,7 @@
     <body>
         <!-- the "canvas" tag creates a canvas that we can draw on -->
         <!-- width and height attributes dictate the size of the canvas in pixels-->
-        <canvas width="600" height="600"></cavas>
+        <canvas width="800" height="800"></cavas>
         
         <!-- the "script" tag is where we put the active code, or the code that will be run by the browser -->
         <script>
@@ -16,12 +16,20 @@
             // "querySelector" selects an element from the document
             // "()" tells the computer that there will be parameters that help to define this action
             // "'canvas'" is the example name of the parameter we want, and since the name is a string, it is in single quotes ''
-            // ";" tells the computer that this Javascript script is finished
+            // ";" tells the computer that this line is done (C and other languages use this syntax too)
+            // You will see this pattern of identifying an object and requesting an attribute of that object again and again.
+            // See if you can figure out this same pattern using the next variable, "context"
             // Now, with all that out of the way, this is what that looks like in Javascript code:
             
-            //To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, we need to know)
+            // To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, we need to know)
             let context = canvas.getContext('2d');
-            
+
+            // This creates a filled-in rectangle on the 2d canvas
+            context.fillRect(200, 200, 400, 400);
+            // The first two numbers in the () are the x (which goes across/horizontally) and y (which goes up and down/vertically) coordinates
+            // These first two coordinates dictate where the rectangle will start being drawn; they are measured in pixels
+            // The second two numbers are the size of the rectangle, also measured in pixels
+
 
         </script>
 
