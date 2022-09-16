@@ -6,15 +6,31 @@
         
         <!-- the "script" tag is where we put the active code, or the code that will be run by the browser -->
         <script>
-            //Let's draw a circle
-            //First we need to create our canvas and define our context (see Lesson1B for review if needed)
+            // Let's draw a circle
+            // First we need to create our canvas and define our context (see Lesson1B for review if needed)
             let canvas = document.querySelector('canvas');
             let context = canvas.getContext('2d');
 
+            // You can choose any style or width you want; if you do not, the default color is black and line width is 1 pixel
+            // Drawing styles need to be defined before drawing begins. Again, the computer needs to know what crayon to pick up before it draws.
             context.strokeStyle = 'teal';
             context.lineWidth = 10;
+
+            // This resets the current drawing. It empties the list of sub-paths. Think of it like preparing the crayon you are using for the next drawing.
+            // For more detailed information on how this works, check out: https://www.w3schools.com/tags/canvas_beginpath.asp
             context.beginPath();
+
+            // Arc is the code word for drawing any aspect of a circle.
+            // The first two numbers in the () define the x and y plotting points of the center of the circle. 
+            // Note how this is different from drawing a rectangle, where the defining x and y are the top right corner of the rectangle.
+            // The third number is the radius of the circle or desired arc.
+            // The fourth number is the starting angle of the circle. 0 is the 3 o'clock angle. 
+            // The fifth number is the angle of the end of the arc, measured in radians.
+            // Extra information: What is a radian? https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:radians/v/introduction-to-radians 
+            // Math.PI is Javascript notation for the number Pi.
             context.arc(400, 400, 200, 0, Math.PI * 2);
+
+            // Now that all of the parameters are defined, use this to exectute the circle drawing:
             context.stroke();
 
         </script>
