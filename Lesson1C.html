@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <!-- the "canvas" tag creates a canvas that we can draw on -->
+        <!-- width and height attributes dictate the size of the canvas in pixels-->
+        <canvas width="800" height="800"></canvas>
+        
+        <!-- the "script" tag is where we put the active code, or the code that will be run by the browser -->
+        <script>
+            //Let's draw a circle
+            //First we need to create our canvas and define our context (see Lesson1B for review if needed)
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
+
+            context.strokeStyle = 'teal';
+            context.lineWidth = 10;
+            context.beginPath();
+            context.arc(400, 400, 200, 0, Math.PI * 2);
+            context.stroke();
+
+        </script>
+
+    </body>
+</html>
