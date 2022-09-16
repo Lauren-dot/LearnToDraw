@@ -14,17 +14,17 @@
             // "document" refers to this set of script, specifically, it is a Javascript object that refers to the HTML document we are working with
             // "." states that we want a part of the object (in this case, document)
             // "querySelector" selects an element from the document
-            // "()" tells the computer that there will be parameters that help to define this action
+            // "()" tells the computer that there will be parameters that help to define or are needed to help inform how to fulfill this action
             // "'canvas'" is the example name of the parameter we want, and since the name is a string, it is in single quotes ''
             // ";" tells the computer that this line is done (C and other languages use this syntax too)
             // You will see this pattern of identifying an object and requesting an attribute of that object again and again.
             // See if you can figure out this same pattern using the next variable, "context"
             // Now, with all that out of the way, this is what that looks like in Javascript code:
-            
-            // To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, we need to know)
+            // But first...
+            // To draw, the canvas needs a context (Will this be a 2d or a 3d picture? To draw, the computer need to know)
             let context = canvas.getContext('2d');
 
-            // Notice how this next line of code is not a variable or a function. It is a property. 
+            // Notice how this next line of code is not a variable or a function. It is a property. Yet it's still a property which holds a value. (In this case, pink. If it was not defined, it would just be black.)
             // Before we draw even a simple shape on our canvas using our context, we need to define the style of what we will draw
             // You can experiment by putting this property below the .fillRect attribute. 
             // Will the rectangle still be pink (or another color of your choice?)? No. The computer needs to know the correct crayon in hand before it draws anything.
@@ -36,6 +36,16 @@
             // These first two coordinates dictate where the rectangle will start being drawn; they are measured in pixels
             // The second two numbers are the size of the rectangle, also measured in pixels
 
+
+            //Now, let's practice this process by creating an outline for the rectangle.
+            //Can you follow along with what is happening? Use documentation like https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API 
+            //Or https://www.w3schools.com/tags/ref_canvas.asp or for details like line color, https://www.html5canvastutorials.com/tutorials/html5-canvas-line-color/ to help you out.
+            context.strokeStyle = "green";
+            context.lineWidth = 10;
+            context.beginPath();
+            context.rect(200, 200, 400, 400);
+            context.stroke();
+            //Notice how the styles for the line are defined first, then path and location and size, then the command to draw the line
 
         </script>
 
