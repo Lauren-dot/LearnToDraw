@@ -15,7 +15,7 @@
             // For example, let's create an array that will define the colors of what we want to draw:
             let color = ['DarkRed', 'Tomato', 'Pink', 'Gold', 'SeaGreen', 'Teal', 'SteelBlue', 'Purple'];
             // We will be able to access each of these colors through their order number; so 1 is 'DarkRed' or 7 is 'Purple'
-            // You can also play with colors by using names or hex color codes. Here is some documentation: https://htmlcolorcodes.com/color-names/
+            // You can also play with colors by using names or hex color codes. Look here for more: https://htmlcolorcodes.com/color-names/
 
             // Variables
             // Variables are a word or string that hold or point to a value of your choosing. 
@@ -39,12 +39,16 @@
             // Our First "For" Loop
             for (i; i < maxIndex; i++) {
                 context.strokeStyle = color[i];
-                context.beginPath();
-                context.rect(x, y, width, height);
-                context.stroke();
-               // x = x + (width + gap) * i;
-                //y = y + (height + gap) * i;
-            };
+                context.lineWidth = 5;
+                
+                for (j; j < maxIndex; j++) {
+                    context.beginPath();
+                    context.rect(x, y, width, height);
+                    context.stroke();
+                    x = x + (width + gap) * i;
+                    y = y + (height + gap) * j;
+                } 
+            }
 
         </script>
     </body>
