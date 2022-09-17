@@ -4,5 +4,26 @@
 <html>
     <body>
         <canvas width="800" height="800"></canvas>
+        <script>
+            // See annotation in Lesson 1 to parse these variables
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
+
+            // Variables
+            let height = 50;
+            let width = 50;
+            let i = 0;
+            let maxIndex = 5;
+            let x = 0;
+            let y = 0;
+
+            // Our First "For" Loop
+            for (i; i < maxIndex; i++) {
+                context.beginPath();
+                context.rect(x, y, width, height);
+                context.stroke();
+            }
+
+        </script>
     </body>
 </html>
