@@ -10,22 +10,41 @@
             let context = canvas.getContext('2d');
 
             // Array
-            let color = ['darkRed', 'tomato', 'pink', 'gold', 'seaGreen', 'teal', 'steelBlue', 'purple'];
+            // An array is a special kind of object in Javascript. Essentially, an indexed list.
+            // Arrays can hold many values inside a single object. You can access each of these values through their index number.
+            // For example, let's create an array that will define the colors of what we want to draw:
+            let color = ['DarkRed', 'Tomato', 'Pink', 'Gold', 'SeaGreen', 'Teal', 'SteelBlue', 'Purple'];
+            // We will be able to access each of these colors through their order number; so 1 is 'DarkRed' or 7 is 'Purple'
+            // You can also play with colors by using names or hex color codes. Here is some documentation: https://htmlcolorcodes.com/color-names/
 
             // Variables
+            // Variables are a word or string that hold or point to a value of your choosing. 
+            // Variables are reusable, making them very useful in coding. 
+            // Many variables are defined through numbers or strings, like these:
             let height = 50;
             let width = 50;
-            let i = 0;
-            let maxIndex = 5;
+            let gap = 25;
             let x = 0;
             let y = 0;
 
+            // Other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
+            let maxIndex = color.length;
+
+            // "i" is a classic variable for "index", which is typically used as a counter for a loop (so you don't create an infinite loop by accident). 
+            // This came from when computers had limited space; programmers limited their use of characters as much as possible.
+            let i = 0;
+            // Often, if you needed a nested loop, the next index would be called "j", as it is the letter that comes after "i" in the English alphabet.
+            let j = 0;
+
             // Our First "For" Loop
             for (i; i < maxIndex; i++) {
+                context.strokeStyle = color[i];
                 context.beginPath();
                 context.rect(x, y, width, height);
                 context.stroke();
-            }
+               // x = x + (width + gap) * i;
+                //y = y + (height + gap) * i;
+            };
 
         </script>
     </body>
