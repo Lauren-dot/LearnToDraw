@@ -3,7 +3,7 @@
 
 <html>
     <body>
-        <canvas width="800" height="800"></canvas>
+        <canvas width="1000" height="1000"></canvas>
         <script>
             // See annotation in Lesson 1 to parse these variables
             let canvas = document.querySelector('canvas');
@@ -16,18 +16,17 @@
             let height = 50;
             let width = 50;
             let gap = 25;
-            let x = 0;
-            let y = 0;
 
             // Other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
             let maxIndex = color.length;
 
             // Nested For Loops
             for (let i = 0; i < maxIndex; i++) {
-                for (let j = 0; j < maxIndex; j++){
+                for (let j = 0; j < maxIndex; j++) {
                     context.strokeStyle = color[i];
                     context.lineWidth = 5;
-                    x = x + ((width + gap) + i);
+                    let x = 100 + (width + gap) * i;
+                    let y = 100 + (width + gap) * j;
 
                     // This block of text draws the larger square
                     context.beginPath();
@@ -39,7 +38,7 @@
                     context.rect(x + 10, y + 10, width - 20, height - 20);
                     context.stroke();
 
-                    y = y + ((width + gap) + j);
+                    
                 }
                 
             }
