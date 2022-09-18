@@ -23,6 +23,7 @@
             // Nested For Loops
             for (let i = 0; i < maxIndex; i++) {
                 for (let j = 0; j < maxIndex; j++) {
+                    // Define the color of the crayon the computer is picking up and where to put it to start the drawing process
                     context.strokeStyle = color[i];
                     context.lineWidth = 5;
                     let x = 100 + (width + gap) * i;
@@ -33,12 +34,14 @@
                     context.rect(x, y, width, height);
                     context.stroke();
 
-                    // This block of text draws the smaller square
-                    context.beginPath();
-                    context.rect(x + 10, y + 10, width - 20, height - 20);
-                    context.stroke();
-
-                    
+                    // Introducing Contitionals
+                    if (Math.random() > 0.5) {
+                        // This block of text draws the smaller square
+                        context.beginPath();
+                        context.rect(x + 10, y + 10, width - 20, height - 20);
+                        context.stroke();
+                    } 
+                 
                 }
                 
             }
