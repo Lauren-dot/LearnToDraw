@@ -13,7 +13,7 @@
             // An array is a special kind of object in Javascript. Essentially, an indexed list.
             // Arrays can hold many values inside a single object. You can access each of these values through their index number.
             // For example, let's create an array that will define the colors of what we want to draw:
-            let color = ['DarkRed', 'Tomato', 'Pink', 'Gold', 'SeaGreen', 'Teal', 'SteelBlue', 'Purple'];
+            let color = ['DarkRed', 'Tomato', 'Pink', 'Gold', 'LimeGreen', 'Teal', 'SteelBlue', 'Purple'];
             // We will be able to access each of these colors through their order number; so 1 is 'DarkRed' or 7 is 'Purple'
             // You can also play with colors by using names or hex color codes. Look here for more: https://htmlcolorcodes.com/color-names/
 
@@ -30,24 +30,30 @@
             // Other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
             let maxIndex = color.length;
 
-            // "i" is a classic variable for "index", which is typically used as a counter for a loop (so you don't create an infinite loop by accident). 
-            // This came from when computers had limited space; programmers limited their use of characters as much as possible.
-            let i = 0;
-            // Often, if you needed a nested loop, the next index would be called "j", as it is the letter that comes after "i" in the English alphabet.
-            let j = 0;
+
 
             // Our First "For" Loop
-            for (i; i < maxIndex; i++) {
+            // Note how a variable can also be defined within the parameters of the for loop
+            // "i" is a classic variable for "index", which is typically used as a counter for a loop (so you don't create an infinite loop by accident). 
+            // Extra note: i++ is another way of writing i = i + 1. This is a quick notation way of increasing the index by one. It has quick notation because it is common.
+            for (let i = 0; i < maxIndex; i++) {
+                
+                // This line utilizes the array above to create a rainbow of boxes. 
+                // Using the array's special attributes (of an indexed list), we can use our for loop's index to go through the colors and change them according to the array.
+                // When tested, we can see that the for loop is working through each iteration through both counting and color
                 context.strokeStyle = color[i];
                 context.lineWidth = 5;
-                
-                for (j; j < maxIndex; j++) {
-                    context.beginPath();
-                    context.rect(x, y, width, height);
-                    context.stroke();
-                    x = x + (width + gap) * i;
-                    y = y + (height + gap) * j;
-                } 
+                x = x + ((width + gap) + i);
+
+                // This block of text draws the larger square
+                context.beginPath();
+                context.rect(x, y, width, height);
+                context.stroke();
+
+                // This block of text draws the smaller square
+                context.beginPath();
+                context.rect(x + 10, y + 10, width - 20, height - 20);
+                context.stroke();
             }
 
         </script>
