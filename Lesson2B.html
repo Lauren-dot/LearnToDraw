@@ -9,18 +9,28 @@
             let canvas = document.querySelector('canvas');
             let context = canvas.getContext('2d');
 
-            // Array: See Lesson 2 for fuller overview
+            // Array: See previous lesson for fuller overview
             let color = ['DarkRed', 'Tomato', 'Pink', 'Gold', 'LimeGreen', 'Teal', 'SteelBlue', 'Purple'];
             
             // Variables
+            // Notice how some variables simply point to numbers or strings.
             let height = 50;
             let width = 50;
             let gap = 25;
 
-            // Other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
+            // Yet other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
             let maxIndex = color.length;
 
-            // Nested For Loops
+            // Nested "For" Loops
+            // For loops enable the computer to go through information and/or commands until a condition has been met.
+            // For loops contain three parameters.
+            // In this case, we define the first parameter as the variable index (traditionally notated with "i"). (A secondary index, as seen in the nested for loop is often indicated by "j", the letter after "i")
+            // In the second parameter, we set the condition in which the for loop will be broken (as long as it is less than maxLength)
+            // In the third and final parameter, we tell the computer how to change the condition as it goes through each set of commands contained within the for loop. (In this case, to increment "i" by 1 after completing each loop)
+
+            // Practical Note: Nesting "for" loops create a lot of functionality, but it also increases processing time (measured in what is called "Big O" Notation).
+            // A nested "for" loop creates quadratic time complexity, as the program loops through the information in the array time after time after time; in Big O Notation, this is O(n^2). This is to be avoided if the code is to be scaled, but works just fine here for our purposes.
+            // To review Big O Notation, try https://medium.com/@lmonty22/big-o-notation-avoiding-nested-loops-2924f3002a08 or for a more scientifically in depth discussion, try this article from MIT: https://web.mit.edu/16.070/www/lecture/big_o.pdf
             for (let i = 0; i < maxIndex; i++) {
                 for (let j = 0; j < maxIndex; j++) {
                     // Define the color of the crayon the computer is picking up and where to put it to start the drawing process
@@ -35,6 +45,9 @@
                     context.stroke();
 
                     // Introducing Contitionals
+                    // Conditionals are expressions which calculate a true or false (boolean) statement
+                    // If the statement found within the () parameters is true, the block of code within the "if"'s {} will execute.
+                    // It is also possible to add "else if" and "else" statements to create options for execution. We will surely see this in later files.
                     if (Math.random() > 0.5) {
                         // This block of text draws the smaller square
                         context.beginPath();
