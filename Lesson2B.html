@@ -14,9 +14,14 @@
             
             // Variables
             // Notice how some variables simply point to numbers or strings.
-            let height = 50;
-            let width = 50;
-            let gap = 25;
+            // There are two special ways to declare a variable. The first is using the word "let", as seen above and in other places in our code. 
+            // The second uses the word "const". Const is for variables that are constant and unchanging. We don't adjust these variables theh whole time, so we can use const here.
+            const height = 50;
+            const width = 50;
+            const gap = 25;
+            // However, in our upcoming loop, x and y will change. So it is important to identify these variables with "let".
+            // Notice how in Javascript, we don't even need to point to a value for these variables yet. We just need to identify them as something that we will eventually use.
+            let x, y;
 
             // Yet other variables are defined by other objects in the code, like this one that ties number of maxIndex to the length of an array (in this case, the array called "color")
             let maxIndex = color.length;
@@ -36,8 +41,8 @@
                     // Define the color of the crayon the computer is picking up and where to put it to start the drawing process
                     context.strokeStyle = color[i];
                     context.lineWidth = 5;
-                    let x = 100 + (width + gap) * i;
-                    let y = 100 + (width + gap) * j;
+                    x = 100 + (width + gap) * i;
+                    y = 100 + (width + gap) * j;
 
                     // This block of text draws the larger square
                     context.beginPath();
